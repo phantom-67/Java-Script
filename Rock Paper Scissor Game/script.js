@@ -19,7 +19,7 @@ function printMessage(result){
         message.style.backgroundColor="red";
     }
     else{
-        essage.style.backgroundColor="black";
+        message.style.backgroundColor="black";
     }
 }
 
