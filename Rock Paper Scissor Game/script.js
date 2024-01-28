@@ -12,6 +12,15 @@ function compChoice(arr){
 function printMessage(result){
     var message = document.querySelector(".spin");
     message.innerText=result;
+    if(result==="You Win"){
+        message.style.backgroundColor="green";
+    }
+    else if(result==="Computer Win"){
+        message.style.backgroundColor="red";
+    }
+    else{
+        essage.style.backgroundColor="black";
+    }
 }
 
 function drawGame(){
