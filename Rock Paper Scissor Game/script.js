@@ -9,9 +9,14 @@ function compChoice(arr){
     return arr[randIdx];
 }
 
+function printMessage(result){
+    var message = document.querySelector(".spin");
+    message.innerText=result;
+}
+
 function drawGame(){
     console.log("Game draw.")
-    alert("Game Draw");
+    printMessage("Draw!");
 }
 
 function winner(userWin){
@@ -20,14 +25,16 @@ function winner(userWin){
         console.log("You Win");
         userscore++;
         document.getElementById("user-score").innerText = userscore;
+        printMessage("You Win")
 
     }else{
         console.log("Computer Win");
         compscore++;
         document.getElementById("comp-score").innerText = compscore;
+        printMessage("Computer Win")
     }
 }
-
+ 
 function playGame(userChoice){
     arr = ["rock","paper","scissor"];
     var computerChoice=compChoice(arr);
