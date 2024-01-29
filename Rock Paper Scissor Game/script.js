@@ -9,38 +9,40 @@ function compChoice(arr){
     return arr[randIdx];
 }
 
-function printMessage(result){
+function printMessage(result,computerChoice){
     var message = document.querySelector(".spin");
-    message.innerText=result;
     if(result==="You Win"){
         message.style.backgroundColor="green";
+        message.innerHTML=`You Win, Computer pick ${computerChoice}`;
     }
-    else if(result==="Computer Win"){
-        message.style.backgroundColor="red";
+    else if(result==="Draw!"){
+        message.style.backgroundColor="black";
+        message.innerHTML=`Game Draw, Computer pick ${computerChoice}`;
     }
     else{
-        message.style.backgroundColor="black";
+        message.style.backgroundColor="red";
+        message.innerHTML=`You Lose, Computer pick ${computerChoice}`;
     }
 }
 
-function drawGame(){
+function drawGame(computerChoice){
     console.log("Game draw.")
-    printMessage("Draw!");
+    printMessage("Draw!",computerChoice);
 }
 
-function winner(userWin){
+function winner(userWin,computerChoice){
 
     if(userWin){
         console.log("You Win");
         userscore++;
         document.getElementById("user-score").innerText = userscore;
-        printMessage("You Win")
+        printMessage("You Win",computerChoice)
 
     }else{
         console.log("Computer Win");
         compscore++;
         document.getElementById("comp-score").innerText = compscore;
-        printMessage("Computer Win")
+        printMessage("Computer Win",computerChoice);
     }
 }
  
@@ -48,7 +50,7 @@ function playGame(userChoice){
     arr = ["rock","paper","scissor"];
     var computerChoice=compChoice(arr);
     if(userChoice===computerChoice){
-        drawGame();
+        drawGame(computerChoice);
     }
     else{
         userWin = true;
@@ -61,7 +63,7 @@ function playGame(userChoice){
         else {
             userWin = compChoice==="rock" ? false:true;
         }
-        winner(userWin);
+        winner(userWin,computerChoice);
     }
 }
 
