@@ -59,8 +59,9 @@ img{
     background-color: #03071e;
     color: white;
     height: 50px;
-    width: 150px;
+    width: auto;
     font-size: 17px;
     border-radius: 2rem;
     border: none;
+    padding: 1rem;
 }
